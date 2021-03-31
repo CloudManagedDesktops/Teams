@@ -48,6 +48,11 @@ Invoke-WebRequest -Uri $webSocketsURL -OutFile $outputPath
 
 Start-Process -FilePath msiexec.exe -Args "/I $outputPath /quiet /norestart /log webSocket.log" -Wait
 
+Remove-Item -Path C:\teams\
+
 write-host ' Customization: Finished Install the Teams WebSocket Service'
 
 write-host 'Customization: Finished Install Teams plugins'
+
+
+
