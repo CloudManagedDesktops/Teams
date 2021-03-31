@@ -32,7 +32,7 @@ try
         }
         if (Test-Path -Path $TeamsPath) {
             Write-Host "Deleting Teams directory"
-            Remove-Item $Path $TeamsPath -Recurse
+            Remove-Item $Path $TeamsPath -Recurse
             if($Error[0])
             {
                 $ErrorOut = $Error[0] | Out-String
