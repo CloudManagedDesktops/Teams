@@ -1,12 +1,4 @@
-write-host ' Customization: Set required regKey'
-
-New-Item -Path HKLM:\SOFTWARE\Microsoft -Name "Teams"
-
-New-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Teams -Name "IsWVDEnvironment" -Type "Dword" -Value "1"
-
-write-host ' Customization: Finished Set required regKey'
-
-# install vc
+# install Teams related plugins - start with C++ Redistributable
 
 write-host ' Customization: Install the latest Microsoft Visual C++ Redistributable'
 
@@ -48,7 +40,7 @@ Invoke-WebRequest -Uri $webSocketsURL -OutFile $outputPath
 
 Start-Process -FilePath msiexec.exe -Args "/I $outputPath /quiet /norestart /log webSocket.log" -Wait
 
-Remove-Item -Path C:\teams\
+Remove-Item -Path C:\teams\ -Recurse
 
 write-host ' Customization: Finished Install the Teams WebSocket Service'
 
