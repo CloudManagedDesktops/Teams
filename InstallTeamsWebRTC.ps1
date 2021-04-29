@@ -1,5 +1,6 @@
 # install Teams related plugins - start with C++ Redistributable
 
+
 write-host ' Customization: Install the latest Microsoft Visual C++ Redistributable'
 
 $appName = 'teams'
@@ -7,6 +8,7 @@ $appName = 'teams'
 $drive = 'C:\'
 
 New-Item -Path $drive -Name $appName -ItemType Directory -ErrorAction SilentlyContinue
+reg add "HKLM\SOFTWARE\Microsoft\Teams" /v IsWVDEnvironment /t REG_DWORD /d 1 /f /reg:64
 
 $LocalPath = $drive + '\' + $appName
 
