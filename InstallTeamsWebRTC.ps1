@@ -32,7 +32,7 @@ write-host 'Customization: Finished Install the latest Microsoft Visual C++ Redi
 
 write-host 'Customization: Install the Teams WebSocket Service'
 
-$webSocketsURL = 'https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4AQBt'
+$webSocketsURL = 'https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWFYsj'
 
 $webSocketsInstallerMsi = 'webSocketSvc.msi'
 
