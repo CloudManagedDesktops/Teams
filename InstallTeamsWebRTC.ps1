@@ -9,6 +9,7 @@ $drive = 'C:\'
 
 New-Item -Path $drive -Name $appName -ItemType Directory -ErrorAction SilentlyContinue
 reg add "HKLM\SOFTWARE\Microsoft\Teams" /v IsWVDEnvironment /t REG_DWORD /d 1 /f /reg:64
+reg add "HKLM\SOFTWARE\Microsoft\Teams" /v IsW365Environment /t REG_DWORD /d 1 /f /reg:64
 
 $LocalPath = $drive + '\' + $appName
 
@@ -32,7 +33,7 @@ write-host 'Customization: Finished Install the latest Microsoft Visual C++ Redi
 
 write-host 'Customization: Install the Teams WebSocket Service'
 
-$webSocketsURL = 'https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWFYsj'
+$webSocketsURL = 'https://aka.ms/msrdcwebrtcsvc/msi'
 
 $webSocketsInstallerMsi = 'webSocketSvc.msi'
 
